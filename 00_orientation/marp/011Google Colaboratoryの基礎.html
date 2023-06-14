@@ -62,6 +62,12 @@
 apt等によるパッケージ管理も可能です</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">!ls -al
 <span class="hljs-comment"># or  %ls -al</span>
+
+<span class="hljs-comment"># total 16</span>
+<span class="hljs-comment"># drwxr-xr-x 1 root root 4096 Jun 12 13:36 .</span>
+<span class="hljs-comment"># drwxr-xr-x 1 root root 4096 Jun 14 04:01 ..</span>
+<span class="hljs-comment"># drwxr-xr-x 4 root root 4096 Jun 12 13:35 .config</span>
+<span class="hljs-comment"># drwxr-xr-x 1 root root 4096 Jun 12 13:36 sample_data</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9">
@@ -71,7 +77,13 @@ apt等によるパッケージ管理も可能です</p>
 <p>例：geopandasをインストールする場合</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">%pip -q install geopandas
 <span class="hljs-comment"># or !pip -q install geopandas</span>
+
+<span class="hljs-comment">#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 15.4 MB/s eta 0:00:00</span>
+<span class="hljs-comment">#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 58.0 MB/s eta 0:00:00</span>
+<span class="hljs-comment">#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.9/7.9 MB 55.8 MB/s eta 0:00:00</span>
 </code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10">
 <h3 id="google-drive%E3%82%92%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88">Google Driveをマウント</h3>
 <p>ファイル操作を行なう場合はGoogle Drive上でファイルを管理します。<br />
 ファイルにアクセスするためには、以下のコマンドによりGoogle Driveをマウントする必要があります。</p>

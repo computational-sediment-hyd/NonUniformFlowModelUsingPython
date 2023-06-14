@@ -85,6 +85,12 @@ apt等によるパッケージ管理も可能です
 ```python
 !ls -al
 # or  %ls -al
+
+# total 16
+# drwxr-xr-x 1 root root 4096 Jun 12 13:36 .
+# drwxr-xr-x 1 root root 4096 Jun 14 04:01 ..
+# drwxr-xr-x 4 root root 4096 Jun 12 13:35 .config
+# drwxr-xr-x 1 root root 4096 Jun 12 13:36 sample_data
 ```
 
 
@@ -101,7 +107,14 @@ Colabには多くの主要ライブラリが最初からインストールされ
 ```python
 %pip -q install geopandas
 # or !pip -q install geopandas
+
+#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 15.4 MB/s eta 0:00:00
+#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 58.0 MB/s eta 0:00:00
+#     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.9/7.9 MB 55.8 MB/s eta 0:00:00
 ```
+
+
+---
 
 ### Google Driveをマウント
 
