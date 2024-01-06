@@ -1,7 +1,7 @@
 ---
 marp: true
 class: invert
-footer: "https://computational-sediment-hyd.hatenablog.jp/archive"
+footer: "https://computational-sediment-hyd.hatenablog.jp/entry/2024/01/06/004200"
 ---
 
 # 準二次元不等流計算1/4：不等流計算の基礎
