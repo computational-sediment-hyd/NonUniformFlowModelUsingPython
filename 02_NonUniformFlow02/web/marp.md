@@ -15,8 +15,10 @@ footer: "https://computational-sediment-hyd.hatenablog.jp/entry/2024/01/06/13321
  - 下図に示す実河川ような横断面形状は一般断面や自然河道断面などと呼ばれる。前回は矩形断面を対象として不等流計算を行ったが今回は一般断面を対象とする。
  - このような実務者向けの計算テクニックは水理公式集、河川砂防技術基準などに一部記述はあるのものの参考書籍が少ない。
 
-![h:350px](output_2_0.png)
+
+![h:300](output_2_0.png)
     
+
 
 ---
 
@@ -43,10 +45,11 @@ $$
 それぞれの定義は難しい上に$z_b$は水位によって変わることが理解できる。これが、一般断面の大きな特徴であり、**水位によって理論的な（物理的に意味を持つ）河床高が変わる。**
 $h,z_b$の2変数を同時に解くことはできないため、$h+z_b \equiv H$として$H$のみを変数として計算を行なう。
 
-
-![h:300px](output_5_0.png)
+    
+![h:300](output_5_0.png)
     
 ---
+
 
 マニング則についても以下のとおり若干の変更を加える。
 
@@ -78,6 +81,9 @@ $$
 ## 限界水深、等流水深の定義
 
 一般断面の基礎式を用いて、限界水深、等流水深を矩形断面と同様に定義で設定することは難しいため、便宜的に以下のとおりに設定する。
+
+
+---
 
 ### 等流水深
 
@@ -147,7 +153,7 @@ $$
 
 河道断面の座標を次図のように定義する。
 
-![h:300px](https://computational-sediment-hyd.github.io/NonUniformFlowModelUsingPython/02_NonUniformFlow02/ref/secttex.svg)
+![h:300](https://computational-sediment-hyd.github.io/NonUniformFlowModelUsingPython/02_NonUniformFlow02/ref/secttex.svg)
 
 ---
 
@@ -237,15 +243,15 @@ $$
 
 ```python
 import matplotlib.pyplot as plt
-x=[0, 5,93,100,200,206,294,300]
-y=[6, 3.5, 3.5,  0,  0,  3,  3,  6]
-plt.plot(x,y, c='k')
+L=[0, 5,93,100,200,206,294,300]
+Z=[6, 3.5, 3.5,  0,  0,  3,  3,  6]
+plt.plot(L,Z, c='k')
 plt.show()                # 描画
 ```
 
 
     
-![h:200px](output_25_0.png)
+![h:200](output_25_0.png)
     
 
 
@@ -262,13 +268,13 @@ n=[0.041, 0.041,0.030,0.030,0.030,0.040,0.040]
 
 
 ```python
-def H2ABSKn(x, y, n, H):
+def H2ABSKn(l, z, n, H):
     A, B, S, SN = float(0), float(0), float(0), float(0)
     
-    for i in range(1, len(x)):
-        dx = x[i] - x[i-1]    
-        dy = y[i] - y[i-1]    
-        hb, hf = H - y[i-1], H - y[i]
+    for i in range(1, len(l)):
+        dx = l[i] - l[i-1]    
+        dy = z[i] - z[i-1]    
+        hb, hf = H - z[i-1], H - z[i]
         
         if hb <= float(0) :
             if hf > float(0) :
@@ -310,7 +316,7 @@ def H2ABSKn(x, y, n, H):
 
 ```python
 import numpy as np
-A, B, S, K, nd = H2ABSKn(np.array(x), np.array(y), np.array(n), 5.0)
+A, B, S, K, nd = H2ABSKn(np.array(L), np.array(Z), np.array(n), 5.0)
 print('河積：{}\n水面幅：{}\n潤辺：{}\n通水能：{}\n合成粗度係数：{}'.format(A, B, S, K, nd))
 ```
 
